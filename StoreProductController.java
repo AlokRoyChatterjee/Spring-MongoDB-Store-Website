@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.springmvc.springmongodbweb.controllers;
+
+package storeproducts;
 
 import com.springmvc.springmongodbweb.models.Product;
 import com.springmvc.springmongodbweb.repositories.ProductRepository;
@@ -20,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author didin
  */
 @Controller
-public class ProductController {
+public class StoreProductController {
 
     @Autowired
     ProductRepository productRepository;
@@ -33,7 +29,7 @@ public class ProductController {
 
     @RequestMapping("/create")
     public String create(Model model) {
-        return "create";
+        return "addstoreproduct";
     }
 
     @RequestMapping("/save")
@@ -65,7 +61,7 @@ public class ProductController {
     @RequestMapping("/edit/{id}")
     public String edit(@PathVariable String id, Model model) {
         model.addAttribute("product", productRepository.findById(id).get());
-        return "edit";
+        return "changestoreproduct";
     }
     
     @RequestMapping("/update")
