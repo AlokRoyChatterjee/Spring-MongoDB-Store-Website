@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class StoreProductController {
     @Autowired
     StoreItemRepository itemrepository;
-     @RequestMapping("/save")
+     @RequestMapping("/saveitem")
     public String save(@RequestParam String itemname, @RequestParam String infoitem, @RequestParam Double itemamount, @RequestParam String item) {
         StoreItem item = new StoreIem();
         item.setitemanme(itemname);
