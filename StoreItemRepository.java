@@ -1,4 +1,4 @@
-package storeproducts;
+package storeitems;
 
 import com.springmvc.springmongodbweb.models.Product;
 import org.springframework.data.repository.CrudRepository;
