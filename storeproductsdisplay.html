@@ -5,7 +5,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="default">
     <head>
-        <title>Show Product</title>
+        <title>Store Products Display</title>
     </head>
     <body>
         <div layout:fragment="content" class="row">
@@ -16,9 +16,9 @@
                 <h2 th:text="${product.prodName}"></h2>
                 <h2><img th:src="${product.prodImage}" width="200" /></h2>
                 <dl class="list">
-                    <dt>Product Description</dt>
+                    <dt>Description on this Product</dt>
                     <dd th:text="${product.prodDesc}"></dd>
-                    <dt>Product Description</dt>
+                    <dt>Product Amount</dt>
                     <dd th:text="${product.prodPrice}"></dd>
                 </dl>
                 <form action="/delete">
