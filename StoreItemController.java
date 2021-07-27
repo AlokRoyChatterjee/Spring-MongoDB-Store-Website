@@ -1,5 +1,5 @@
 
-package storeproducts;
+package storeitems;
 import com.springmvc.springmongodbweb.models.Product;
 import com.springmvc.springmongodbweb.repositories.ProductRepository;
 import java.util.Optional;
@@ -22,7 +22,7 @@ public class StoreProductController {
         item.setiteminfo(infoitem);
         item.setitemamount(prodPrice);
         item.setitem(item);
-        productRepository.save(item);
+        itemrepository.save(item);
 
         return "redirect:/show/" + product.getId();
     }
@@ -43,7 +43,7 @@ public class StoreProductController {
     public String update(@RequestParam String id, @RequestParam String itemname, @RequestParam String infoitem, @RequestParam Double itemamount, @RequestParam String item) {
         Optional<StoreItem> item = itemrepository.findById(id);
         item.get().setitemname(itemname);
-        item.get().setinfoitem(infoitem);
+        item.get().setiteminfo(infoitem);
         item.get().setitemamount(itemamount);
         item.get().setitem(item);
         itemRepository.save(item.get());
@@ -58,8 +58,8 @@ public class StoreProductController {
 
     @RequestMapping("/delete")
     public String delete(@RequestParam String id) {
-        Optional<StoreItem> product = itemrepository.findById(id);
-        itemrepository.delete(product.get());
+        Optional<StoreItem> item = itemrepository.findById(id);
+        itemrepository.delete(item.get());
         return "redirect:/product";
     }
     
