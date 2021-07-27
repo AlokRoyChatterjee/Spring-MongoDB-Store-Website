@@ -66,7 +66,7 @@ public class StoreProductController {
        @RequestMapping("/show/{id}")
     public String show(@PathVariable String id, Model model) {
         model.addAttribute("product", itemrepository.findById(id).get());
-        return "storeproductsdisplay";
+        return "storeitems";
     }
     
   
