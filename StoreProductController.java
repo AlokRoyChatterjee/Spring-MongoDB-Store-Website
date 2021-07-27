@@ -24,7 +24,7 @@ public class StoreProductController {
     @RequestMapping("/product")
     public String product(Model model) {
         model.addAttribute("products", productRepository.findAll());
-        return "product";
+        return "storeproduct";
     }
 
     @RequestMapping("/create")
@@ -47,7 +47,7 @@ public class StoreProductController {
     @RequestMapping("/show/{id}")
     public String show(@PathVariable String id, Model model) {
         model.addAttribute("product", productRepository.findById(id).get());
-        return "show";
+        return "storeproductsdisplay";
     }
 
     @RequestMapping("/delete")
