@@ -27,14 +27,14 @@ public class StoreProductController {
         return "redirect:/show/" + item.getId();
     }
 
-    @RequestMapping("/product")
+    @RequestMapping("/storeitem")
     public String product(Model model) {
         model.addAttribute("products", itemrepository.findAll());
         return "StoreItem";
     }
 
    
-      @RequestMapping("/edit/{id}")
+      @RequestMapping("/change/{id}")
     public String edit(@PathVariable String id, Model model) {
         model.addAttribute("product", itemrepository.findById(id).get());
         return "ChangeStoreItem";
@@ -51,7 +51,7 @@ public class StoreProductController {
         return "redirect:/show/" + item.get().getId();
     }
    
-     @RequestMapping("/create")
+     @RequestMapping("/additem")
     public String create(Model model) {
         return "addstoreproduct";
     }
@@ -63,7 +63,7 @@ public class StoreProductController {
         return "redirect:/product";
     }
     
-       @RequestMapping("/show/{id}")
+       @RequestMapping("/display/{id}")
     public String show(@PathVariable String id, Model model) {
         model.addAttribute("product", itemrepository.findById(id).get());
         return "storeitems";
