@@ -10,6 +10,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface StoreItemRespository extends CrudRepository<Product, String> {
     
     @Override
-    public void delete(storeitem item);
+    public void delete(StoreItem item);
     
 }
