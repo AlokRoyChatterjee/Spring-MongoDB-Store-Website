@@ -1,4 +1,4 @@
-package com.springmvc.springmongodbweb;
+package storeitems;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableMongoRepositories("com.springmvc.springmongodbweb.repositories")
-public class SpringMongodbWebApplication {
+public class StoreProductsWebsite {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringMongodbWebApplication.class, args);
+		SpringApplication.run(StoreproductsWebsite.class, args);
 	}
 }
