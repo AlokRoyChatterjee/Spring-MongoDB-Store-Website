@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.springmvc.springmongodbweb.models;
-
+package storeproducts;
+package storeitems;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author didin
  */
 @Document(collection = "products")
-public class Product {
+public class StoreItem {
     @Id
     String id;
     String prodName;
@@ -21,10 +16,10 @@ public class Product {
     Double prodPrice;
     String prodImage;
 
-    public Product() {
+    public StoreItem() {
     }
 
-    public Product(String prodName, String prodDesc, Double prodPrice, String prodImage) {
+    public StoreItem(String prodName, String prodDesc, Double prodPrice, String prodImage) {
         this.prodName = prodName;
         this.prodDesc = prodDesc;
         this.prodPrice = prodPrice;
