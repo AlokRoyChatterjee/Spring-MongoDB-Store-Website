@@ -11,10 +11,10 @@ public class StoreItem {
     Double itemamount;
     String item;
    public StoreItem(String itemname, String infoitem, Double itemamount, String item) {
-        this.itemname = prodName;
-        this.infoitem = prodDesc;
-        this.itemamount = prodPrice;
-        this.item = prod;
+        this.itemname = itemname;
+        this.infoitem = infoitem;
+        this.itemamount = itemamount;
+        this.item = item;
     }
 
     public String getId() {
