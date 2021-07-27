@@ -5,7 +5,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="default">
     <head>
-        <title>Edit Product</title>
+        <title>Change Product</title>
     </head>
     <body>
         <div layout:fragment="content" class="row">
@@ -13,26 +13,26 @@
                 <h3>
                     <a href="/product" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list"></span> Product</a>
                 </h3>
-                <h2>Edit Product</h2>
+                <h2>Change Product</h2>
                 <form action="/update">
                     <div class="form-group">
                         <label for="email">Product Name:</label>
                         <input type="text" class="form-control" name="prodName" th:value="${product.prodName}" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Product Description</label>
+                        <label for="email">Description about this product</label>
                         <textarea class="form-control" name="prodDesc" cols="60" rows="3" th:text="${product.prodDesc}"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="email">Product Price</label>
+                        <label for="email">Product Amount</label>
                         <input type="number" class="form-control" name="prodPrice" th:value="${product.prodPrice}" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Product Image URL:</label>
+                        <label for="email">URL for this product image</label>
                         <input type="url" class="form-control" name="prodImage" th:value="${product.prodImage}" />
                     </div>
                     <input type="hidden" name="id" th:value="${product.id}" />
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <button type="submit" class="btn btn-success">Add this product</button>
                 </form>
             </div>
         </div>
