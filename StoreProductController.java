@@ -58,7 +58,7 @@ public class StoreProductController {
     @RequestMapping("/edit/{id}")
     public String edit(@PathVariable String id, Model model) {
         model.addAttribute("product", itemrepository.findById(id).get());
-        return "changestoreproduct";
+        return "ChangeStoreItem";
     }
     
     @RequestMapping("/update")
