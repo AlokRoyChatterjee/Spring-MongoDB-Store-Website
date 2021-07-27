@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class StoreProductController {
 
     @Autowired
-    ProductRepository productRepository;
+    StoreItemRepository itemrepository;
 
     @RequestMapping("/product")
     public String product(Model model) {
-        model.addAttribute("products", productRepository.findAll());
+        model.addAttribute("products", itemrepository.findAll());
         return "storeproduct";
     }
 
@@ -34,7 +34,7 @@ public class StoreProductController {
 
     @RequestMapping("/save")
     public String save(@RequestParam String prodName, @RequestParam String prodDesc, @RequestParam Double prodPrice, @RequestParam String prodImage) {
-        Product product = new Product();
+        StoreItem product = new StoreIem();
         product.setProdName(prodName);
         product.setProdDesc(prodDesc);
         product.setProdPrice(prodPrice);
@@ -46,27 +46,27 @@ public class StoreProductController {
 
     @RequestMapping("/show/{id}")
     public String show(@PathVariable String id, Model model) {
-        model.addAttribute("product", productRepository.findById(id).get());
+        model.addAttribute("product", itemrepository.findById(id).get());
         return "storeproductsdisplay";
     }
 
     @RequestMapping("/delete")
     public String delete(@RequestParam String id) {
-        Optional<Product> product = productRepository.findById(id);
-        productRepository.delete(product.get());
+        Optional<Product> product = itemrepository.findById(id);
+        itemrepository.delete(product.get());
 
         return "redirect:/product";
     }
     
     @RequestMapping("/edit/{id}")
     public String edit(@PathVariable String id, Model model) {
-        model.addAttribute("product", productRepository.findById(id).get());
+        model.addAttribute("product", itemrepository.findById(id).get());
         return "changestoreproduct";
     }
     
     @RequestMapping("/update")
     public String update(@RequestParam String id, @RequestParam String prodName, @RequestParam String prodDesc, @RequestParam Double prodPrice, @RequestParam String prodImage) {
-        Optional<Product> product = productRepository.findById(id);
+        Optional<StoreItem> product = itemrepository.findById(id);
         product.get().setProdName(prodName);
         product.get().setProdDesc(prodDesc);
         product.get().setProdPrice(prodPrice);
