@@ -21,7 +21,7 @@ public class StoreProductController {
     @RequestMapping("/product")
     public String product(Model model) {
         model.addAttribute("products", itemrepository.findAll());
-        return "storeitem";
+        return "StoreItem";
     }
 
     @RequestMapping("/create")
