@@ -24,7 +24,7 @@ public class StoreProductController {
         item.setitem(item);
         itemrepository.save(item);
 
-        return "redirect:/show/" + product.getId();
+        return "redirect:/show/" + item.getId();
     }
 
     @RequestMapping("/product")
