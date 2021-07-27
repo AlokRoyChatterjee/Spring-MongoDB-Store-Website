@@ -16,23 +16,23 @@
                 <h2>Change Store Item</h2>
                 <form action="/update">
                     <div class="form-group">
-                        <label for="email">Product Name:</label>
-                        <input type="text" class="form-control" name="prodName" th:value="${product.prodName}" />
+                        <label for="email">Store item name:</label>
+                        <input type="text" class="form-control" name="itemanme" th:value="${StoreItem.itemname}" />
                     </div>
                     <div class="form-group">
                         <label for="email">Description about this product</label>
-                        <textarea class="form-control" name="prodDesc" cols="60" rows="3" th:text="${product.prodDesc}"></textarea>
+                        <textarea class="form-control" name="prodDesc" cols="60" rows="3" th:text="${StoreItem.infoitem}"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="email">Product Amount</label>
-                        <input type="number" class="form-control" name="prodPrice" th:value="${product.prodPrice}" />
+                        <input type="number" class="form-control" name="prodPrice" th:value="${StoreItem.itemamount}" />
                     </div>
                     <div class="form-group">
-                        <label for="email">URL for this product image</label>
-                        <input type="url" class="form-control" name="prodImage" th:value="${product.prodImage}" />
+                        <label for="email">store item</label>
+                        <input type="url" class="form-control" name="prodImage" th:value="${StoreItem.item}" />
                     </div>
                     <input type="hidden" name="id" th:value="${product.id}" />
-                    <button type="submit" class="btn btn-success">Add this product</button>
+                    <button type="submit" class="btn btn-success">Add this store item</button>
                 </form>
             </div>
         </div>
