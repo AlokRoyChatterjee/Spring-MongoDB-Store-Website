@@ -22,7 +22,7 @@
                     <dd th:text="${storeitem.itemamount}"></dd>
                 </dl>
                 <form action="/delete">
-                    <input type="hidden" name="id" th:value="${product.id}" />
+                    <input type="hidden" name="id" th:value="${storeitem.id}" />
                     <h2><input type="submit" class="btn btn-danger" value="Delete" />
                         <a th:href="@{'/edit/' + ${storeitem.id}}" class="btn btn-warning">Change Store Item</a></h2>
                 </form>
